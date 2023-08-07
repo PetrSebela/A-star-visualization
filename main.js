@@ -15,6 +15,7 @@ window.onresize = () => {
     scaleCanvas()
     drawGrid()
     eventGrid = getEmptyGrid();
+    randomAstar();
 }
 
 

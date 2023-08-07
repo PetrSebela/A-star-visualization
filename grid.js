@@ -126,7 +126,6 @@ function voidCellsOfType(cellType, grid){
     grid.forEach(row => {
         row.forEach(cell => {
             if(cell.type == cellType){
-                console.log(cell)
                 cell.setType(CellType.void)
             } 
         })

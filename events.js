@@ -61,12 +61,11 @@ function runAstar(){
     }
 
     computedPath = astar(grid, stc, tgc)
-    
     shownGrid = grid;
     drawCells(grid)
 
     if(computedPath == null){
-        console.log("no path exists")
+        console.error("no path exists")
         return
     }
     drawPath(computedPath)
@@ -128,7 +127,6 @@ canvas.addEventListener("mousemove",(ctx) => {
     let yIndex = Math.floor(ctx.offsetY / cellSize)
     
     if(lastX == xIndex && lastY == yIndex) return
-    
     lastX = xIndex
     lastY = yIndex
     
@@ -158,7 +156,6 @@ canvas.addEventListener("mousemove",(ctx) => {
 
     runAstar()
     highLightCell(debugCell)
-    console.log("highlight")
 })
 
 

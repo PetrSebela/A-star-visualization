@@ -121,14 +121,18 @@ canvas.addEventListener("click", (ctx) => {
 var mouseDown = false;
 var lastX = -1;
 var lastY = -1;
+var lastMouseState = false
 
-canvas.addEventListener("mousemove",(ctx) => {
+
+function cellsUpdate(ctx){
     let xIndex = Math.floor(ctx.offsetX / cellSize)
     let yIndex = Math.floor(ctx.offsetY / cellSize)
     
-    if(lastX == xIndex && lastY == yIndex) return
+    if(lastX == xIndex && lastY == yIndex && lastMouseState == mouseDown) return
+  
     lastX = xIndex
     lastY = yIndex
+    lastMouseState = mouseDown
     
     let debugCell = getCellFromGrid(xIndex, yIndex, eventGrid)
     if(debugCell == null) return
@@ -156,9 +160,19 @@ canvas.addEventListener("mousemove",(ctx) => {
 
     runAstar()
     highLightCell(debugCell)
+}
+
+
+canvas.addEventListener("mousemove",(ctx) => {
+   cellsUpdate(ctx)
 })
 
 
 
-document.addEventListener("mousedown",(ctx) => {if(ctx.button == 0) mouseDown = true})
+document.addEventListener("mousedown",(ctx) => {
+    if(ctx.button == 0){
+        mouseDown = true
+        cellsUpdate(ctx)
+    }
+})
 document.addEventListener("mouseup",(ctx) => {if(ctx.button == 0) mouseDown = false})

@@ -11,7 +11,7 @@ function scaleCanvas(){
 
 function drawGrid() {
     ctx.lineWidth = 1
-    ctx.strokeStyle = "#fff"
+    ctx.strokeStyle = "#aaa"
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     for (let y = 0; y < canvas.height / cellSize - 1; y ++) {
         for (let x = 0; x < canvas.width / cellSize - 1; x ++) {

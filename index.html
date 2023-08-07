@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>A-star</title>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <div id="options">
+        <div class="container" style="width: 100%;">
+            <h1>Options</h1>
+            <button class="big-button toggle" onclick="setEvent(this,Event.stPlace)">Set start</button>
+            <button class="big-button toggle" onclick="setEvent(this,Event.tgPlace)">Set target</button>
+            <button class="big-button toggle" onclick="setEvent(this,Event.solidPlace)">Set solid</button>
+            <button class="big-button toggle" onclick="setEvent(this,Event.voidPlace)">Set void</button>
+            <div class="line" style="width: 100%;"></div>
+            <button class="big-button" onclick="randomAstar()">Random</button>
+            <div class="line" style="width: 100%;"></div>
+           
+            <div class="row">
+                <p>Show cells</p>
+                <input onchange="updateCells()" type="checkbox" id="showCells">
+            </div>
+           
+            <div class="line" style="width: 100%;"></div>
+            <div class="row">
+                <p>cell type</p>
+                <p id="cell-type"></p>
+            </div>
+            <div class="row">
+                <p>g</p>
+                <p id="g-cost"></p>
+            </div>
+            <div class="row">
+                <p>h</p>
+                <p id="h-cost"></p>
+            </div>
+            <div class="row">
+                <p>f</p>
+                <p id="f-cost"></p>
+            </div>
+            <div class="row">
+                <p>(x, y)</p>
+                <p id="position"></p>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <script src="essentials.js"></script>
+    <script src="cell.js"></script>
+    <script src="grid.js"></script>
+    <script src="a-star.js"></script>
+    <script src="main.js"></script>
+    <script src="random.js"></script>
+    <script src="events.js"></script>
+</body>
+</html>

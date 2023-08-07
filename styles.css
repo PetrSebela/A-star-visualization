@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: #181818;
+    display: flex;
+    flex-direction: row;
+}
+
+h1,h2,h3,p,button{
+    color: #fff;
+    font-family: "Roboto Mono";
+}
+
+#canvas{
+    margin:  1rem;
+    width: calc(100vw - 20rem - 2rem);
+    height: calc(100vh - 2rem);
+    min-width: 0;
+}
+
+#grid{
+    width: 100%;
+    height: 100%;
+}
+
+#options{
+    margin: 1rem;
+    width: calc(20rem - 2rem);
+    min-width: fit-content;
+}
+
+#options{
+    gap: 1rem;
+}
+
+#options > button{
+    width: 80%;
+    height: fit-content;
+    padding: 0.5rem;
+    outline: none;
+    border: 1px solid white;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    color: #fff;
+    font-weight: 900;
+    font-size: 1em;
+    transition: width 150ms;
+    cursor: pointer;
+}
+
+
+
+.big-button{
+    width: 100%;
+    background: transparent;
+    outline: none;
+    border: 1px solid #fff;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    transition: 125ms;
+    cursor: pointer;
+}
+
+.big-button:hover{
+    background-color: #ffffff13;
+    border-radius: 0.5rem;
+}
+
+.big-button.toggle:active{
+    width: calc(100% - 1rem);
+}
+
+.big-button.toggle.active{
+    width: calc(100% - 1rem);
+}
+
+.big-button:active{
+    background-color: #ffffff67;
+}
+
+.line{
+    width: 80%;
+    height: 1px;
+    margin: 1rem 0;
+    background-color: rgba(255, 255, 255, 0.521);
+}
+
+
+.container{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.row{
+    display: flex;
+    width: calc(100% - 2rem);
+}
+
+.row > *{
+    margin: 0 auto;
+}
+
+.row > *:first-child{
+    margin-left: 0;
+}
+.row > *:last-child{
+    margin-right: 0;
+}

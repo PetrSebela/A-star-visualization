@@ -169,10 +169,10 @@ canvas.addEventListener("mousemove",(ctx) => {
 
 
 
-document.addEventListener("mousedown",(ctx) => {
+canvas.addEventListener("mousedown",(ctx) => {
     if(ctx.button == 0){
         mouseDown = true
         cellsUpdate(ctx)
     }
 })
-document.addEventListener("mouseup",(ctx) => {if(ctx.button == 0) mouseDown = false})
+canvas.addEventListener("mouseup",(ctx) => {if(ctx.button == 0) mouseDown = false})
